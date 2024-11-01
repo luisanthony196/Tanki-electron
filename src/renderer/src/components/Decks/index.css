@@ -1,0 +1,9 @@
+.backButton {
+  position: absolute !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  min-width: 25px !important;
+}
