@@ -9,17 +9,9 @@ import {
   Stack,
   Typography
 } from '@mui/material'
+import { CustomCardContent } from '../Shared/CustomCardContent'
 
 const twoLineTitle = {
-  display: '-webkit-box',
-  WebkitLineClamp: 2,
-  WebkitBoxOrient: 'vertical',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis'
-}
-
-const oneLineText = {
-  height: '3em',
   display: '-webkit-box',
   WebkitLineClamp: 2,
   WebkitBoxOrient: 'vertical',
@@ -42,23 +34,14 @@ export const HorizontalDeckList = ({ filterDeckList, handleInfo, handlePractice 
           sx={{ borderRadius: 4, width: '12rem', minWidth: '12rem' }}
         >
           <CardActionArea onClick={() => handleInfo(deck)}>
-            <CardContent>
-              <Typography gutterBottom variant="h6" color="success" style={twoLineTitle}>
-                {deck.name}
-              </Typography>
-              <p>{deck.statistics?.cardsCount} cartas</p>
-              <p>Difficultad: {deck.statistics?.difficulty}</p>
-              <p>Ultima revision: {deck.statistics?.lastReview}</p>
-            </CardContent>
+            <CustomCardContent deck={deck} styles={twoLineTitle} />
           </CardActionArea>
-          <CardActions>
-            <IconButton color="primary" onClick={() => handleInfo(deck)}>
-              <Info />
-            </IconButton>
+          <CardActions sx={{ justifyContent: 'center' }}>
             <Button
-              variant="contained"
+              variant="text"
               size="small"
-              color="success"
+              color="secondary"
+              sx={{ width: '90%' }}
               onClick={() => handlePractice(deck)}
               endIcon={<ArrowForwardIos />}
             >

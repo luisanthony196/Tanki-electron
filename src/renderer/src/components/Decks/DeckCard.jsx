@@ -1,4 +1,4 @@
-import { Bookmark, Download, Favorite } from '@mui/icons-material'
+import { Bookmark, Favorite, OfflinePin } from '@mui/icons-material'
 import { Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material'
 
 const oneLineTitle = {
@@ -37,7 +37,7 @@ function DeckCard({ title, subtitle, isFavorite, isMarkup, isOwn, isDownload, ha
               <Stack direction="row">
                 {isFavorite && <Favorite fontSize="small" sx={{ color: 'error.main' }} />}
                 {isMarkup && <Bookmark fontSize="small" sx={{ color: 'info.main' }} />}
-                {isDownload && <Download fontSize="small" sx={{ color: 'white' }} />}
+                {isDownload && <OfflinePin fontSize="small" sx={{ color: 'white' }} />}
               </Stack>
             )}
           </Stack>
