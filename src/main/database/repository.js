@@ -39,7 +39,8 @@ export const statisticsByDeck = (deckId) => {
   const stmt = db.prepare(
     'select COUNT(*) as card_count,' +
       'AVG(case when r.difficulty != 0 then r.difficulty end) as difficulty,' +
-      'MAX(case when r.last_review is not null then r.last_review end) as last_review ' +
+      'MAX(case when r.last_review is not null then r.last_review end) as last_review,' +
+      "COUNT(CASE WHEN r.due < date('now') THEN r.due end) as total_due " +
       'from cards c inner join reviews r on c.id = r.card_id ' +
       'where c.deck_id = ?'
   )

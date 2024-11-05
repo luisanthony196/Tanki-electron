@@ -18,5 +18,6 @@ class Statistic {
     this.difficulty = deckApi.difficulty
     this.cardsCount = deckApi.card_count
     this.lastReview = deckApi.last_review
+    this.totalDue = deckApi.total_due
   }
 }
