@@ -16,31 +16,27 @@ const theme = createTheme({
     dark: {
       palette: {
         primary: {
-          main: '#5266ff'
+          main: '#5bc0be'
         },
         secondary: {
-          main: '#ff8c6d'
+          main: '#3a506b'
         },
         info: {
-          main: lightBlue[500]
+          main: '#b8a8db'
         },
         success: {
-          main: '#6bbaa2'
+          main: '#4b9f72'
         },
         error: {
-          main: '#ff579f'
+          main: '#f44336'
         },
         text: {
-          primary: '#e4e5e7',
-          secondary: '#94959e'
+          primary: '#ffffff',
+          secondary: '#5bc0be'
         },
         background: {
-          default: '#060813',
-          paper: '#000000',
-          accent: '#1b2c32'
-        },
-        zippy: {
-          border: '#20233c'
+          default: '#0b132b',
+          paper: '#1c2541'
         }
       }
     }
