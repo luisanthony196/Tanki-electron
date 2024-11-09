@@ -17,3 +17,9 @@ export const filters = {
   MARK: 2,
   DOWN: 3
 }
+
+export const menuOptions = {
+  DETAIL: 'Ver detalles',
+  STUDY: 'Estudiar Deck',
+  EDIT: 'Editar Deck'
+}

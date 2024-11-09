@@ -2,8 +2,9 @@ import { Box, Button, Stack, Typography } from '@mui/material'
 import { Title } from '../Shared/Title'
 import './index.css'
 import { getCardsByDeck, getHomeData } from '../../services/mainService'
-import { HorizontalDeckList } from './HomeCards'
+import { RecentsDeckList } from './HomeCards'
 import { useEffect, useState } from 'react'
+import { East } from '@mui/icons-material'
 
 function Home({ setCardList, setShowCard, setSelectedDeck, setShowDeckInfo }) {
   const [homeDecks, setHomeDecks] = useState([])
@@ -34,9 +35,11 @@ function Home({ setCardList, setShowCard, setSelectedDeck, setShowDeckInfo }) {
         <Typography variant="h5" component="div">
           Favoritos
         </Typography>
-        <Button variant="text">Ver todos</Button>
+        <Button variant="text" endIcon={<East />}>
+          Ver todos
+        </Button>
       </Stack>
-      <HorizontalDeckList
+      <RecentsDeckList
         filterDeckList={homeDecks.filter((deck) => deck.isFavorite)}
         handleInfo={handleInfo}
         handlePractice={handlePractice}
@@ -45,9 +48,11 @@ function Home({ setCardList, setShowCard, setSelectedDeck, setShowDeckInfo }) {
         <Typography variant="h5" component="div">
           Coleccion
         </Typography>
-        <Button variant="text">Ver todos</Button>
+        <Button variant="text" endIcon={<East />}>
+          Ver todos
+        </Button>
       </Stack>
-      <HorizontalDeckList
+      <RecentsDeckList
         filterDeckList={homeDecks.filter((deck) => deck.isMarkup)}
         handleInfo={handleInfo}
         handlePractice={handlePractice}
