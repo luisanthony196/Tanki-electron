@@ -25,3 +25,17 @@
 .scroll_enabled::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
+
+.oneLineText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.twoLineText {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,21 +1,6 @@
 import { Bookmark, Favorite, OfflinePin } from '@mui/icons-material'
 import { Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material'
 
-const oneLineTitle = {
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis'
-}
-
-const twoLineText = {
-  height: '3em',
-  display: '-webkit-box',
-  WebkitLineClamp: 2,
-  WebkitBoxOrient: 'vertical',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis'
-}
-
 function DeckCard({ title, subtitle, isFavorite, isMarkup, isOwn, isDownload, handleClick }) {
   return (
     <Card
@@ -30,7 +15,7 @@ function DeckCard({ title, subtitle, isFavorite, isMarkup, isOwn, isDownload, ha
             spacing={1}
             sx={{ justifyContent: 'space-between', alignItems: 'center' }}
           >
-            <Typography gutterBottom variant="h6" style={oneLineTitle}>
+            <Typography gutterBottom variant="h6" className="oneLineText">
               {title}
             </Typography>
             {(isFavorite || isMarkup || isDownload) && (
@@ -41,7 +26,11 @@ function DeckCard({ title, subtitle, isFavorite, isMarkup, isOwn, isDownload, ha
               </Stack>
             )}
           </Stack>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }} style={twoLineText}>
+          <Typography
+            variant="body2"
+            sx={{ color: 'text.secondary', height: '2.75rem' }}
+            className="twoLineText"
+          >
             {subtitle}
           </Typography>
         </CardContent>

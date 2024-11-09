@@ -25,12 +25,6 @@ import { menuOptions } from '../../constants/uiConstants'
 //   textOverflow: 'ellipsis'
 // }
 
-const oneLineTitle = {
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis'
-}
-
 const boxStyle = {
   display: 'flex',
   placeItems: 'center',
@@ -95,23 +89,23 @@ export const RecentsDeckList = ({ filterDeckList, handleInfo, handlePractice }) 
               </Menu>
             </Stack>
             <CardContent sx={{ py: 0 }}>
-              <Typography variant="h6" style={oneLineTitle} sx={{ mb: 0 }}>
+              <Typography variant="h6" className="oneLineText" sx={{ mb: 0 }}>
                 {deck.name}
               </Typography>
               <div style={boxStyle}>
-                <Style sx={{ color: 'secondary.light' }} fontSize="small" />
+                <Style sx={{ color: 'primary.main' }} fontSize="small" />
                 <Typography variant="body2">Cartas: {deck.statistics?.cardsCount}</Typography>
-                <RunningWithErrors sx={{ color: 'primary.main' }} fontSize="small" />
+                <RunningWithErrors sx={{ color: 'error.light' }} fontSize="small" />
                 <Typography variant="body2">Vencidas: {deck.statistics?.totalDue}</Typography>
               </div>
               <LinearProgress
                 sx={{ height: '1rem', borderRadius: '4px', my: 1 }}
-                color="primary"
+                color="info"
                 variant="determinate"
                 value={(deck.statistics?.totalDue / deck.statistics?.cardsCount) * 100}
               />
               <div style={boxStyle}>
-                <EventRepeat sx={{ color: 'warning.main' }} fontSize="small" />
+                <EventRepeat sx={{ color: 'warning.light' }} fontSize="small" />
                 <Typography variant="body2">
                   Ultima revision:{' '}
                   {deck.statistics?.lastReview
@@ -122,10 +116,10 @@ export const RecentsDeckList = ({ filterDeckList, handleInfo, handlePractice }) 
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
               <Button
-                variant="text"
+                variant="outlined"
                 size="small"
                 color="primary"
-                sx={{ width: '90%' }}
+                sx={{ width: '95%' }}
                 onClick={() => handlePractice(deck)}
                 startIcon={<AutoStories />}
               >
